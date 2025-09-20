@@ -1,12 +1,17 @@
 {
   "name": "ss14-paperwork",
+  "version": "0.0.1",
   "displayName": "SS14 Paperwork",
   "description": "Assists in creating paperwork for Space Station 14",
-  "version": "0.0.1",
+  "author": "Smalls",
+  "license": "MS-PL",
+  "type": "module",
   "engines": {
     "vscode": "^1.104.0"
   },
   "categories": [
+    "Formatters",
+    "Visualization",
     "Other"
   ],
   "activationEvents": [],
