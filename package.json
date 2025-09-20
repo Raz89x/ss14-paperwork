@@ -19,10 +19,6 @@
   "contributes": {
     "commands": [
       {
-        "command": "ss14-paperwork.helloWorld",
-        "title": "Hello World"
-      },
-      {
         "command": "textRenderer.showPreview",
         "title": "SS14 Paperwork Renderer Preview"
       }
