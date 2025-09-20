@@ -16,8 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - `[bolditalic]...[/bolditalic]` - Bold italic combination
     - `[color=#hex|colorname]...[/color]` - Colored text with hex codes or color names
     - `[mono]...[/mono]` - Monospace text formatting
-    - `[bullet]...[/bullet]` - Bulleted list items
-    - `[bullet/]` - Individual bullet points
+    - `[bullet]...[/bullet]` and `[bullet/]` - Bulleted list items
     - `[head=1|2|3]...[/head]` - Three levels of headers with different sizes
 - Paper label support using `# Label Name` syntax at document start
 - Line ending validation (LF required for SS14 compatibility)
