@@ -30,23 +30,23 @@ function parseText(text) {
     .replace(/\[italic]([\s\S]*?)\[\/italic]/gi, '<i>$1</i>')
     .replace(/\[bolditalic]([\s\S]*?)\[\/bolditalic]/gi, '<b><i>$1</i></b>')
     .replace(/\[color=(#[0-9a-fA-F]{3,6}|[a-zA-Z]+)]([\s\S]*?)\[\/color]/gi, '<span style="color:$1">$2</span>')
-    .replace(/\[mono]([\s\S]*?)\[\/mono]/gi, '<code>$1</code>')
+    .replace(/\[mono]([\s\S]*?)\[\/mono]/gi, '<span class="mono">$1</span>')
     .replace(/\[bullet]([\s\S]*?)\[\/bullet]/gi, '<ul><li>$1</li></ul>')
     .replace(/\[bullet\/]/gi, '• ')
     .replace(/\[head=([123])]([\s\S]*?)\[\/head]/gi, (match, lvl, content) => {
-      let style = ''
+      let classes = ''
       switch (lvl) {
         case '1':
-          style = 'font-size:32px; font-weight:bold; display: inline-block; vertical-align: middle; line-height: 0;'
+          classes = 'head head1'
           break
         case '2':
-          style = 'font-size:23px; font-weight:600; display: inline-block; vertical-align: middle; line-height: 0;'
+          classes = 'head head2'
           break
         case '3':
-          style = 'font-size:19px; font-weight:500; display: inline-block; vertical-align: middle; line-height: 0;'
+          classes = 'head head2'
           break
       }
-      return `<div style="${style}">${content}</div>`
+      return `<div class="${classes}">${content}</div>`
     })
   } while (output !== prev)
 

@@ -21,12 +21,93 @@ function getWebviewContent(text, panel, isLF) {
   const stylePathOnDisk = vscode.Uri.file(path.join(__dirname, 'media', 'style.css'))
   const styleUri = panel.webview.asWebviewUri(stylePathOnDisk)
 
+  // Convert Noto Sans font paths to Webview URIs
+  const notoSansRegularPath = vscode.Uri.file(path.join(__dirname, 'media', 'font', 'NotoSans', 'NotoSans-Regular.ttf'))
+  const notoSansBoldPath = vscode.Uri.file(path.join(__dirname, 'media', 'font', 'NotoSans', 'NotoSans-Bold.ttf'))
+  const notoSansItalicPath = vscode.Uri.file(path.join(__dirname, 'media', 'font', 'NotoSans', 'NotoSans-Italic.ttf'))
+  const notoSansBoldItalicPath = vscode.Uri.file(path.join(__dirname, 'media', 'font', 'NotoSans', 'NotoSans-BoldItalic.ttf'))
+  const notoSansSymbolsPath = vscode.Uri.file(path.join(__dirname, 'media', 'font', 'NotoSans', 'NotoSansSymbols-Regular.ttf'))
+  const notoSansSymbolsBoldPath = vscode.Uri.file(path.join(__dirname, 'media', 'font', 'NotoSans', 'NotoSansSymbols-Bold.ttf'))
+
+  const notoSansRegularUri = panel.webview.asWebviewUri(notoSansRegularPath)
+  const notoSansBoldUri = panel.webview.asWebviewUri(notoSansBoldPath)
+  const notoSansItalicUri = panel.webview.asWebviewUri(notoSansItalicPath)
+  const notoSansBoldItalicUri = panel.webview.asWebviewUri(notoSansBoldItalicPath)
+  const notoSansSymbolsUri = panel.webview.asWebviewUri(notoSansSymbolsPath)
+  const notoSansSymbolsBoldUri = panel.webview.asWebviewUri(notoSansSymbolsBoldPath)
+
+  // Convert Roboto Mono font paths to Webview URIs
+  const robotoMonoRegularPath = vscode.Uri.file(path.join(__dirname, 'media', 'font', 'RobotoMono', 'RobotoMono-Regular.ttf'))
+  const robotoMonoBoldPath = vscode.Uri.file(path.join(__dirname, 'media', 'font', 'RobotoMono', 'RobotoMono-Bold.ttf'))
+  const robotoMonoItalicPath = vscode.Uri.file(path.join(__dirname, 'media', 'font', 'RobotoMono', 'RobotoMono-Italic.ttf'))
+
+  const robotoMonoRegularUri = panel.webview.asWebviewUri(robotoMonoRegularPath)
+  const robotoMonoBoldUri = panel.webview.asWebviewUri(robotoMonoBoldPath)
+  const robotoMonoItalicUri = panel.webview.asWebviewUri(robotoMonoItalicPath)
+
   return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
       <title>Text Renderer</title>
+      <style>
+        @font-face {
+          font-family: 'Noto Sans';
+          src: url('${notoSansRegularUri}') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+        @font-face {
+          font-family: 'Noto Sans';
+          src: url('${notoSansBoldUri}') format('truetype');
+          font-weight: bold;
+          font-style: normal;
+        }
+        @font-face {
+          font-family: 'Noto Sans';
+          src: url('${notoSansItalicUri}') format('truetype');
+          font-weight: normal;
+          font-style: italic;
+        }
+        @font-face {
+          font-family: 'Noto Sans';
+          src: url('${notoSansBoldItalicUri}') format('truetype');
+          font-weight: bold;
+          font-style: italic;
+        }
+        @font-face {
+          font-family: 'Noto Sans Symbols';
+          src: url('${notoSansSymbolsUri}') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+        @font-face {
+          font-family: 'Noto Sans Symbols';
+          src: url('${notoSansSymbolsBoldUri}') format('truetype');
+          font-weight: bold;
+          font-style: normal;
+        }
+        
+        @font-face {
+          font-family: 'Roboto Mono';
+          src: url('${robotoMonoRegularUri}') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+        @font-face {
+          font-family: 'Roboto Mono';
+          src: url('${robotoMonoBoldUri}') format('truetype');
+          font-weight: bold;
+          font-style: normal;
+        }
+        @font-face {
+          font-family: 'Roboto Mono';
+          src: url('${robotoMonoItalicUri}') format('truetype');
+          font-weight: normal;
+          font-style: italic;
+        }
+      </style>
       <link href="${styleUri}" rel="stylesheet">
     </head>
     <body>
