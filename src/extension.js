@@ -2,11 +2,10 @@
 
 const vscode = require('vscode')
 const view = require('./webviewContentGenerator.js')
-// import { updatePreview } from './webviewContentGenerator.js'
-
 
 /**
- * @param {vscode.ExtensionContext} context
+ * Activates the extension, registering a command to show the text renderer preview.
+ * @param {vscode.ExtensionContext} context - The extension context.
  */
 function activate(context) {
   // Use the console to output diagnostic information (console.log) and errors (console.error)
@@ -15,6 +14,14 @@ function activate(context) {
 
   let panel
 
+  /**
+   * Registers a command to show a preview of the current text editor's content in a webview panel.
+   * The command displays an information message if no active editor is found.
+   * It creates a webview panel if one doesn't exist and disposes of it when closed.
+   * The preview only supports files with LF line endings, displaying an error message otherwise.
+   * Updates the preview content on text document changes and active editor switches.
+   * @type {vscode.Disposable}
+   */
   let disposable = vscode.commands.registerCommand('textRenderer.showPreview', function() {
     const editor = vscode.window.activeTextEditor
     if (!editor) {

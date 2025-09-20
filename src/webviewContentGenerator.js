@@ -4,6 +4,13 @@ const vscode = require('vscode')
 const path = require('path')
 const parseText = require('./parser.js')
 
+/**
+ * Renders the given text as HTML content for a Webview panel.
+ * @param {string} text The text to render.
+ * @param {vscode.WebviewPanel} panel The Webview panel to display the content in.
+ * @param {boolean} isLF Whether the file uses LF line endings.
+ * @return {string} The HTML content for the Webview panel.
+ */
 function getWebviewContent(text, panel, isLF) {
   const { html, label } = parseText(text)
   panel.title = label ? `Text Renderer — Paper Label (${label})` : 'Text Renderer Preview'
@@ -30,6 +37,13 @@ function getWebviewContent(text, panel, isLF) {
     `
 }
 
+/**
+ * Updates the preview content in a given panel with the provided text and line feed setting.
+ * @param {object} panel The panel object representing the webview to update.
+ * @param {string} text The text content to display in the preview.
+ * @param {boolean} isLF Whether to use line feeds (true) or carriage returns (false) for newlines.
+ * @return {void} This function does not return a value. It updates the panel's webview directly.
+ */
 function updatePreview(panel, text, isLF) {
   panel.webview.html = getWebviewContent(text, panel, isLF)
 }

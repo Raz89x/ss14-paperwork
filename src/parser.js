@@ -1,5 +1,10 @@
 'use strict'
 
+/**
+ * Parses a text string with custom formatting tags and converts it to HTML.
+ * @param {string} text The input text string containing custom formatting tags.
+ * @return {{html: string, label: string | null}} An object containing the parsed HTML string and the extracted label (if any).  The `html` property contains the HTML representation of the formatted text with newlines replaced by `<br>` tags. The `label` property holds the value of a label found at the beginning of the text (prefixed with '# '), or null if no label is present.
+ */
 function parseText(text) {
   let output = text
   let label = null
