@@ -14,6 +14,9 @@ A Visual Studio Code extension that assists in creating and previewing paperwork
 - **Paper Labels**: Support for document labels using `# Label Name` syntax
 - **Line Ending Validation**: Ensures documents use LF line endings (required for SS14)
 - **Side-by-side Editing**: Preview opens in a separate panel alongside your editor
+- **Syntax Highlighting**: Syntax highlighting for SS14 formatting tags
+- **Command Palette**: Quickly open the preview panel with a single command
+- **Filetype Detection**: Automatically detects and opens preview for documents with the `.ss14doc`, `.paper`, and `.paperwork` extension
 
 ## Installation
 1. Download the `.vsix` file from the releases
