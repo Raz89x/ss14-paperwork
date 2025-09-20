@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "SS14 Paperwork",
+  "patterns": [
+    {
+      "include": "#tags"
+    },
+    {
+      "include": "#label"
+    }
+  ],
+  "repository": {
+    "label": {
+      "match": "^#\\s*(.*)$",
+      "name": "entity.name.section.ss14paper"
+    },
+    "tags": {
+      "patterns": [
+        {
+          "match": "\\[(bold|italic|bolditalic|mono|bullet|/bold|/italic|/bolditalic|/mono|/bullet|/head|bullet/|/color)\\]",
+          "name": "keyword.control.ss14paper"
+        },
+        {
+          "match": "\\[(color|head)=(#[0-9a-fA-F]{3,6}|[a-zA-Z]+|[123])\\]",
+          "name": "keyword.control.ss14paper"
+        }
+      ]
+    }
+  },
+  "scopeName": "text.ss14paper"
+}

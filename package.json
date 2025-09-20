@@ -14,9 +14,25 @@
     "Visualization",
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:ss14paper",
+    "onLanguage:plaintext"
+  ],
   "main": "./extension.js",
   "contributes": {
+    "languages": [{
+      "id": "ss14paper",
+      "aliases": ["SS14 Paperwork", "Space Station 14 Paper"],
+      "extensions": [".ss14doc", ".paper", ".paperwork"],
+      "configuration": "./src/language/configuration.json"
+    }],
+    "grammars": [
+      {
+        "language": "ss14paper",
+        "scopeName": "text.ss14paper",
+        "path": "./src/language/syntax.json"
+      }
+    ],
     "commands": [
       {
         "command": "textRenderer.showPreview",

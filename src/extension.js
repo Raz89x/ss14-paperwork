@@ -24,6 +24,8 @@ function activate(context) {
    */
   let disposable = vscode.commands.registerCommand('textRenderer.showPreview', function() {
     const editor = vscode.window.activeTextEditor
+
+    // Check if there's an active editor
     if (!editor) {
       vscode.window.showInformationMessage('No active editor')
       return
@@ -68,7 +70,32 @@ function activate(context) {
     context.subscriptions.push(changeDocSub, changeEditorSub)
   })
 
-  context.subscriptions.push(disposable)
+  // Auto-open preview for .ss14doc, .paper, and .paperwork files when they're opened
+  const autoOpenSubscription = vscode.workspace.onDidOpenTextDocument(document => {
+    const fileName = document.fileName.toLowerCase()
+    if (fileName.endsWith('.ss14doc') ||
+      fileName.endsWith('.paper') ||
+      fileName.endsWith('.paperwork')) {
+
+      // Add a small delay to ensure the editor is fully ready
+      setTimeout(() => {
+        vscode.commands.executeCommand('textRenderer.showPreview')
+      }, 300)
+    }
+  })
+
+// Auto-open preview if a supported file is already open when the extension activates
+  if (vscode.window.activeTextEditor) {
+    const document = vscode.window.activeTextEditor.document
+    const fileName = document.fileName.toLowerCase()
+    if (fileName.endsWith('.ss14doc') ||
+      fileName.endsWith('.paper') ||
+      fileName.endsWith('.paperwork')) {
+      vscode.commands.executeCommand('textRenderer.showPreview')
+    }
+  }
+
+  context.subscriptions.push(disposable, autoOpenSubscription)
 }
 
 // This method is called when your extension is deactivated

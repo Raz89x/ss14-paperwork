@@ -1,0 +1,20 @@
+{
+  "brackets": [
+    ["[", "]"]
+  ],
+  "autoClosingPairs": [
+    { "open": "[", "close": "]" },
+    { "open": "[bold]", "close": "[/bold]" },
+    { "open": "[italic]", "close": "[/italic]" },
+    { "open": "[bolditalic]", "close": "[/bolditalic]" },
+    { "open": "[color=", "close": "[/color]" },
+    { "open": "[mono]", "close": "[/mono]" },
+    { "open": "[bullet]", "close": "[/bullet]" },
+    { "open": "[head=1]", "close": "[/head]" },
+    { "open": "[head=2]", "close": "[/head]" },
+    { "open": "[head=3]", "close": "[/head]" }
+  ],
+  "surroundingPairs": [
+    ["[", "]"]
+  ]
+}
