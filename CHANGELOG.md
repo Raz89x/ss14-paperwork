@@ -5,7 +5,7 @@ All notable changes to the SS14 Paperwork extension will be documented in this f
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0] - 2025-01-20
+## [1.0.0] - 2025-01-20
 
 ### Added
 - Initial release of SS14 Paperwork extension
@@ -61,7 +61,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ---
 
 ## Version History Summary
-- **v1.0**: Initial release with core functionality, real-time preview, and SS14 formatting support
+- **v1.0.0**: Initial release with core functionality, real-time preview, and SS14 formatting support
 
 ## Contributing
 
