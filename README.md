@@ -1,65 +1,73 @@
-# ss14-paperwork README
-
-This is the README for your extension "ss14-paperwork". After writing up a brief description, we recommend including the following sections.
+# SS14 Paperwork
+A Visual Studio Code extension that assists in creating and previewing paperwork for Space Station 14. This extension provides real-time preview functionality for custom formatted text documents used in the SS14 game.
 
 ## Features
+- **Real-time Preview**: Live preview of your paperwork as you type with automatic updates
+- **Custom Formatting Tags**: Support for SS14-specific formatting tags including:
+    - `[bold]...[/bold]` - Bold text
+    - `[italic]...[/italic]` - Italic text
+    - `[bolditalic]...[/bolditalic]` - Bold italic text
+    - `[color=#hex|colorname]...[/color]` - Colored text
+    - `[mono]...[/mono]` - Monospace text
+    - `[bullet]...[/bullet]` and `[bullet/]` - Bulleted lists
+    - `[head=1|2|3]...[/head]` - Headers (3 levels)
+- **Paper Labels**: Support for document labels using `# Label Name` syntax
+- **Line Ending Validation**: Ensures documents use LF line endings (required for SS14)
+- **Side-by-side Editing**: Preview opens in a separate panel alongside your editor
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Installation
+1. Download the `.vsix` file from the releases
+2. Open VS Code
+3. Go to Extensions view (`Ctrl+Shift+X`)
+4. Click the `...` menu and select "Install from VSIX..."
+5. Select the downloaded `.vsix` file
 
-For example if there is an image subfolder under your extension project workspace:
+## Usage
+1. Open any text file in VS Code
+2. Use the Command Palette (`Ctrl+Shift+P`) and search for "SS14 Paperwork Renderer Preview"
+3. The preview will open in a side panel
+4. Start typing with SS14 formatting tags to see live updates
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Example Document
+### Medical Report
+[head=1]PATIENT REPORT[/head]
+[bold]Patient Name:[/bold] John Doe [bold]Condition:[/bold] [color=red]Critical[/color]
+[head=2]Treatment Notes[/head] [bullet]Administered first aid[/bullet] [bullet]Patient stabilized[/bullet] [bullet][mono]Time: 14:32[/mono][/bullet]
+[italic]End of report[/italic]
 
 ## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Visual Studio Code version 1.104.0 or higher
+- Files must use LF (`\n`) line endings for proper SS14 compatibility
 
 ## Extension Settings
+This extension doesn't add any VS Code settings currently.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Commands
+- `SS14 Paperwork Renderer Preview` - Opens the preview panel for the current document
 
 ## Known Issues
+- Files with CRLF line endings will show a warning banner as SS14 requires LF endings
+- Preview only updates when the active editor contains the document being previewed
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### Building from Source
+1. Clone the repository
+2. Run `npm install` to install dependencies
+3. Run `npm run lint` to check for linting issues
+4. Use VS Code's "Run Extension" debug configuration to test
 
-## Release Notes
+### Running Tests
+```bash
+npm test
+```
 
-Users appreciate release notes as you update your extension.
+## License
+This project is licensed under the Microsoft Public License (MS-PL). See the LICENSE file for details.
 
-### 1.0.0
+## Author
+Smalls
 
-Initial release of ...
+## Contributing
+Contributions are welcome! Please feel free to submit issues and pull requests.
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## Changelog
+See CHANGELOG.md for version history and changes.
