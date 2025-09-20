@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "displayName": "SS14 Paperwork",
   "description": "Assists in creating paperwork for Space Station 14",
-  "author": "Smalls",
+  "author": "Raz89",
   "license": "MS-PL",
   "type": "commonjs",
   "engines": {
@@ -19,6 +19,7 @@
     "onLanguage:plaintext"
   ],
   "main": "./extension.js",
+  "icon": "./src/media/icon/logo.svg",
   "contributes": {
     "languages": [{
       "id": "ss14paper",
