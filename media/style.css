@@ -1,0 +1,58 @@
+* {
+    font-size: 16px;
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+    text-wrap-mode: wrap;
+    font-kerning: none;
+}
+
+/* Body text and background */
+body pre {
+    white-space: pre-wrap; /* preserves spaces + wraps lines */
+}
+
+/* Warning banner */
+.warning-banner {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #4ec9b0;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Headings */
+.head1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+.head2 {
+    font-size: 23px;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+.head3 {
+    font-size: 19px;
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    border-radius: 6px;
+    display: block;
+    margin: 0.4rem 0;
+}
