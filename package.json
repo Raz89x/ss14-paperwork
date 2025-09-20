@@ -12,10 +12,16 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "ss14-paperwork.helloWorld",
-      "title": "Hello World"
-    }]
+    "commands": [
+      {
+        "command": "ss14-paperwork.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "textRenderer.showPreview",
+        "title": "SS14 Paperwork Renderer Preview"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
