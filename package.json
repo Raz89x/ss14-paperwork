@@ -5,6 +5,10 @@
   "description": "Assists in creating paperwork for Space Station 14",
   "author": "Raz89",
   "publisher": "Raz89",
+  "repository": {
+    ":type": "git",
+    "url": "https://github.com/Raz89/ss14-paperwork.git"
+  }
   "license": "MS-PL",
   "type": "commonjs",
   "engines": {
@@ -22,12 +26,21 @@
   "main": "./extension.js",
   "icon": "src/media/icon/logo.png",
   "contributes": {
-    "languages": [{
-      "id": "ss14paper",
-      "aliases": ["SS14 Paperwork", "Space Station 14 Paper"],
-      "extensions": [".ss14doc", ".paper", ".paperwork"],
-      "configuration": "./src/language/configuration.json"
-    }],
+    "languages": [
+      {
+        "id": "ss14paper",
+        "aliases": [
+          "SS14 Paperwork",
+          "Space Station 14 Paper"
+        ],
+        "extensions": [
+          ".ss14doc",
+          ".paper",
+          ".paperwork"
+        ],
+        "configuration": "./src/language/configuration.json"
+      }
+    ],
     "grammars": [
       {
         "language": "ss14paper",
