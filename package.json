@@ -46,7 +46,9 @@
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "vscode-test",
-    "package": "vsce package"
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "login": "vsce login"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
