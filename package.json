@@ -4,6 +4,7 @@
   "displayName": "SS14 Paperwork",
   "description": "Assists in creating paperwork for Space Station 14",
   "author": "Raz89",
+  "publisher": "Raz89",
   "license": "MS-PL",
   "type": "commonjs",
   "engines": {
