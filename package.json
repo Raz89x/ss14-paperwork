@@ -19,7 +19,7 @@
     "onLanguage:plaintext"
   ],
   "main": "./extension.js",
-  "icon": "./src/media/icon/logo.png",
+  "icon": "src/media/icon/logo.png",
   "contributes": {
     "languages": [{
       "id": "ss14paper",
