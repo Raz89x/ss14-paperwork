@@ -6,9 +6,9 @@
   "author": "Raz89",
   "publisher": "Raz89",
   "repository": {
-    ":type": "git",
+    "type": "git",
     "url": "https://github.com/Raz89/ss14-paperwork.git"
-  }
+  },
   "license": "MS-PL",
   "type": "commonjs",
   "engines": {
